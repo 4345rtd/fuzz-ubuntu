@@ -1,0 +1,1005 @@
+peripherals:
+- base_address: 1073741824
+  description: Timer 0
+  name: TIMER0
+  registers:
+  - access: null
+    address_offset: 0
+    description: Control Register
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Enable
+      name: ENABLE
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: External Input as Enable
+      name: EXTIN
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: External Clock Enable
+      name: EXTCLK
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Interrupt Enable
+      name: INTEN
+    name: CTRL
+    size: null
+  - access: null
+    address_offset: 4
+    description: Current Timer Counter Value
+    fields: []
+    name: VALUE
+    size: null
+  - access: null
+    address_offset: 8
+    description: Counter Reload Value
+    fields: []
+    name: RELOAD
+    size: null
+  - access: read-only
+    address_offset: 12
+    description: Timer Interrupt status register
+    fields: []
+    name: INTSTATUS
+    size: null
+  - access: write-only
+    address_offset: 12
+    description: Timer Interrupt clear register
+    fields: []
+    name: INTCLEAR
+    size: null
+- base_address: 1073745920
+  description: null
+  name: TIMER1
+  registers: []
+- base_address: 1073750016
+  description: Dual Timer
+  name: DUALTIMER
+  registers:
+  - access: null
+    address_offset: 0
+    description: Timer 1 Load Register
+    fields: []
+    name: TIMER1LOAD
+    size: null
+  - access: read-only
+    address_offset: 4
+    description: Timer 1 Value Register
+    fields: []
+    name: TIMER1VALUE
+    size: null
+  - access: null
+    address_offset: 8
+    description: Timer 1 Control Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Selects one-shot or wrapping counter mode.
+      name: OneShotCount
+    - access: null
+      bit_offset: 1
+      bit_width: 1
+      description: Selects 16-bit or 32- bit counter operation.
+      name: TimerSize
+    - access: null
+      bit_offset: 2
+      bit_width: 2
+      description: Timer prescale bits.
+      name: TimerPre
+    - access: null
+      bit_offset: 5
+      bit_width: 1
+      description: Interrupt Enable bit.
+      name: InterruptEnable
+    - access: null
+      bit_offset: 6
+      bit_width: 1
+      description: Timer Mode bit.
+      name: TimerMode
+    - access: null
+      bit_offset: 7
+      bit_width: 1
+      description: Timer Enable Enable bit.
+      name: TimerEnable
+    name: TIMER1CONTROL
+    size: null
+  - access: write-only
+    address_offset: 12
+    description: Timer 1 Interrupt Clear Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Interrupt
+      name: INT
+    name: TIMER1INTCLR
+    size: null
+  - access: read-only
+    address_offset: 16
+    description: Timer 1 Raw Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Raw Timer Interrupt
+      name: RIS
+    name: TIMER1RIS
+    size: null
+  - access: read-only
+    address_offset: 20
+    description: Timer 1 Mask Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Masked Timer Interrupt
+      name: MIS
+    name: TIMER1MIS
+    size: null
+  - access: null
+    address_offset: 24
+    description: Timer 1 Background Load Register
+    fields: []
+    name: TIMER1BGLOAD
+    size: null
+  - access: null
+    address_offset: 32
+    description: Timer 2 Load Register
+    fields: []
+    name: TIMER2LOAD
+    size: null
+  - access: read-only
+    address_offset: 36
+    description: Timer 2 Value Register
+    fields: []
+    name: TIMER2VALUE
+    size: null
+  - access: null
+    address_offset: 40
+    description: Timer 2 Control Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Selects one-shot or wrapping counter mode.
+      name: OneShotCount
+    - access: null
+      bit_offset: 1
+      bit_width: 1
+      description: Selects 16-bit or 32- bit counter operation.
+      name: TimerSize
+    - access: null
+      bit_offset: 2
+      bit_width: 2
+      description: Timer prescale bits.
+      name: TimerPre
+    - access: null
+      bit_offset: 5
+      bit_width: 1
+      description: Interrupt Enable bit.
+      name: InterruptEnable
+    - access: null
+      bit_offset: 6
+      bit_width: 1
+      description: Timer Mode bit.
+      name: TimerMode
+    - access: null
+      bit_offset: 7
+      bit_width: 1
+      description: Timer Enable Enable bit.
+      name: TimerEnable
+    name: TIMER2CONTROL
+    size: null
+  - access: write-only
+    address_offset: 44
+    description: Timer 2 Interrupt Clear Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Interrupt
+      name: INT
+    name: TIMER2INTCLR
+    size: null
+  - access: read-only
+    address_offset: 48
+    description: Timer 2 Raw Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Raw Timer Interrupt
+      name: RIS
+    name: TIMER2RIS
+    size: null
+  - access: read-only
+    address_offset: 52
+    description: Timer 2 Mask Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Masked Timer Interrupt
+      name: MIS
+    name: TIMER2MIS
+    size: null
+  - access: null
+    address_offset: 56
+    description: Timer 2 Background Load Register
+    fields: []
+    name: TIMER2BGLOAD
+    size: null
+- base_address: 1073758208
+  description: UART 0
+  name: UART0
+  registers:
+  - access: null
+    address_offset: 0
+    description: Recieve and Transmit Data Value
+    fields: []
+    name: DATA
+    size: 8
+  - access: null
+    address_offset: 4
+    description: UART Status Register
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Buffer Overun (write 1 to clear)
+      name: RXOV
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Buffer Overun (write 1 to clear)
+      name: TXOV
+    - access: read-only
+      bit_offset: null
+      bit_width: null
+      description: RX Buffer Full
+      name: RXBF
+    - access: read-only
+      bit_offset: null
+      bit_width: null
+      description: TX Buffer Full
+      name: TXBF
+    name: STATE
+    size: null
+  - access: null
+    address_offset: 8
+    description: UART Control Register
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: High Speed Test Mode for TX only
+      name: HSTX
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Overrun Interrupt Enable
+      name: RVOVINT
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Overrun Interrupt Enable
+      name: TXOVINT
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Interrupt Enable
+      name: RXINT
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Interrupt Enable
+      name: TXINT
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Enable
+      name: RXEN
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Enable
+      name: TXEN
+    name: CTRL
+    size: null
+  - access: read-only
+    address_offset: 12
+    description: UART Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Overrun Interrupt
+      name: RXOV
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Overrun Interrupt
+      name: TXOV
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Interrupt
+      name: RXINT
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Interrupt
+      name: TXINT
+    name: INTSTATUS
+    size: null
+  - access: write-only
+    address_offset: 12
+    description: UART Interrupt CLEAR Register
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Overrun Interrupt
+      name: RXOV
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Overrun Interrupt
+      name: TXOV
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: RX Interrupt
+      name: RXINT
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: TX Interrupt
+      name: TXINT
+    name: INTCLEAR
+    size: null
+  - access: null
+    address_offset: 16
+    description: Baudrate Divider
+    fields: []
+    name: BAUDDIV
+    size: null
+- base_address: 1073762304
+  description: null
+  name: UART1
+  registers: []
+- base_address: 1073766400
+  description: null
+  name: UART2
+  registers: []
+- base_address: 1073770496
+  description: null
+  name: UART3
+  registers: []
+- base_address: 1073778688
+  description: null
+  name: UART4
+  registers: []
+- base_address: 1073807360
+  description: general-purpose I/O
+  name: GPIO0
+  registers:
+  - access: null
+    address_offset: 0
+    description: Data Register
+    fields: []
+    name: DATA
+    size: null
+  - access: null
+    address_offset: 4
+    description: Data Output Register
+    fields: []
+    name: DATAOUT
+    size: null
+  - access: null
+    address_offset: 16
+    description: Ouptut enable set Register
+    fields: []
+    name: OUTENSET
+    size: null
+  - access: null
+    address_offset: 20
+    description: Ouptut enable clear Register
+    fields: []
+    name: OUTENCLR
+    size: null
+  - access: null
+    address_offset: 24
+    description: Alternate function set Register
+    fields: []
+    name: ALTFUNCSET
+    size: null
+  - access: null
+    address_offset: 28
+    description: Alternate function clear Register
+    fields: []
+    name: ALTFUNCCLR
+    size: null
+  - access: null
+    address_offset: 32
+    description: Interrupt enable set Register
+    fields: []
+    name: INTENSET
+    size: null
+  - access: null
+    address_offset: 36
+    description: Interrupt enable clear Register
+    fields: []
+    name: INTENCLR
+    size: null
+  - access: null
+    address_offset: 40
+    description: Interrupt type set Register
+    fields: []
+    name: INTTYPESET
+    size: null
+  - access: null
+    address_offset: 44
+    description: Interrupt type clear Register
+    fields: []
+    name: INTTYPECLR
+    size: null
+  - access: null
+    address_offset: 48
+    description: Polarity-level, edge interrupt configuration set Register
+    fields: []
+    name: INTPOLSET
+    size: null
+  - access: null
+    address_offset: 52
+    description: Polarity-level, edge interrupt configuration clear Register
+    fields: []
+    name: INTPOLCLR
+    size: null
+  - access: read-only
+    address_offset: 56
+    description: Interrupt Status Register
+    fields: []
+    name: INTSTATUS
+    size: null
+  - access: write-only
+    address_offset: 56
+    description: Interrupt CLEAR Register
+    fields: []
+    name: INTCLEAR
+    size: null
+- base_address: 1073811456
+  description: null
+  name: GPIO1
+  registers: []
+- base_address: 1073901568
+  description: SPI
+  name: SPI
+  registers:
+  - access: null
+    address_offset: 0
+    description: SPI Status
+    fields: []
+    name: SPSTAT
+    size: null
+  - access: null
+    address_offset: 2
+    description: SPI Data
+    fields: []
+    name: SPDAT
+    size: null
+  - access: null
+    address_offset: 4
+    description: SPI Clock Configuration
+    fields: []
+    name: SPCLK
+    size: null
+  - access: null
+    address_offset: 6
+    description: SPI Configuration
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SPEN
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SSDIS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: MSTRS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CPOL
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CPHA
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SPR1
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SPR0
+    name: SPCON
+    size: null
+- base_address: 1073774592
+  description: Watchdog Timer
+  name: WDT
+  registers:
+  - access: null
+    address_offset: 0
+    description: Watchdog Load Register
+    fields: []
+    name: WDOGLOAD
+    size: null
+  - access: read-only
+    address_offset: 4
+    description: Watchdog Value Register
+    fields: []
+    name: WDOGVALUE
+    size: null
+  - access: null
+    address_offset: 8
+    description: Watchdog Control Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Enable the interrupt event
+      name: INTEN
+    - access: null
+      bit_offset: 1
+      bit_width: 1
+      description: Enable watchdog reset output
+      name: RESEN
+    name: WDOGCONTROL
+    size: null
+  - access: write-only
+    address_offset: 12
+    description: Watchdog Interrupt Clear Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Interrupt
+      name: INT
+    name: WDOGINTCLR
+    size: null
+  - access: read-only
+    address_offset: 16
+    description: Watchdog Raw Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Raw watchdog Interrupt
+      name: RIS
+    name: WDOGRIS
+    size: null
+  - access: read-only
+    address_offset: 20
+    description: Watchdog Mask Interrupt Status Register
+    fields:
+    - access: null
+      bit_offset: 0
+      bit_width: 1
+      description: Masked Watchdog Interrupt
+      name: MIS
+    name: WDOGMIS
+    size: null
+  - access: null
+    address_offset: 3072
+    description: Watchdog Lock Register
+    fields: []
+    name: WDOGLOCK
+    size: null
+- base_address: 1073905664
+  description: FPGA System Control I/O
+  name: FPGAIO
+  registers:
+  - access: null
+    address_offset: 0
+    description: LED Connections
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: LED0
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: LED1
+    name: LED
+    size: 32
+  - access: null
+    address_offset: 8
+    description: Button Connections
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: BUTTON0
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: BUTTON1
+    name: BUTTON
+    size: 32
+  - access: read-only
+    address_offset: 16
+    description: 1Hz Up Counter
+    fields: []
+    name: CLK1HZ
+    size: 32
+  - access: read-only
+    address_offset: 20
+    description: 100Hz Up Counter
+    fields: []
+    name: CLK100HZ
+    size: 32
+  - access: read-write
+    address_offset: 24
+    description: Cycle up counter
+    fields: []
+    name: COUNTER
+    size: 32
+  - access: read-write
+    address_offset: 28
+    description: Reload value for prescaler counter
+    fields: []
+    name: PRESCALER
+    size: 32
+  - access: read-write
+    address_offset: 32
+    description: Prescale Counter
+    fields: []
+    name: PSCNTR
+    size: 32
+  - access: read-write
+    address_offset: 76
+    description: Misc. Control
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SHIELD1_SPI_nCS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SHIELD0_SPI_nCS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: ADC_SPI_nCS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CLCD_BL_CTRL
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CLCD_RD
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CLCD_RS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CLCD_RESET
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: SPI_nSS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: null
+      name: CLCD_CS
+    name: MISC
+    size: 32
+- base_address: 1073934336
+  description: Serial Communication Controller
+  name: SCC
+  registers:
+  - access: read-write
+    address_offset: 0
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 1 = REMAP Block RAM to ZBT
+      name: REMAP
+    name: CFG_REG0
+    size: 32
+  - access: read-write
+    address_offset: 4
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED7
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED6
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED5
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED4
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED3
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED2
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED1
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC LEDs: 0 = OFF 1 = ON'
+      name: MCC_LED0
+    name: CFG_REG1
+    size: 32
+  - access: read-only
+    address_offset: 8
+    description: null
+    fields: []
+    name: CFG_REG2
+    size: 32
+  - access: read-only
+    address_offset: 12
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE7
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE6
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE5
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE4
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE3
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE2
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE1
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'MCC SWITCHES: 0 = OFF 1 = ON'
+      name: MCC_SWITCHE0
+    name: CFG_REG3
+    size: 32
+  - access: read-only
+    address_offset: 16
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Board Revision
+      name: BRDREV
+    name: CFG_REG4
+    size: 32
+  - access: read-write
+    address_offset: 20
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'Debug: 0 = Serial Wire Debug 1 = JTAG'
+      name: DEBUG
+    name: CFG_REG5
+    size: 32
+  - access: read-only
+    address_offset: 24
+    description: null
+    fields: []
+    name: CFG_REG6
+    size: 32
+  - access: read-only
+    address_offset: 28
+    description: null
+    fields: []
+    name: CFG_REG7
+    size: 32
+  - access: read-write
+    address_offset: 160
+    description: null
+    fields: []
+    name: SYS_CFGDATA_RTN
+    size: 32
+  - access: read-write
+    address_offset: 164
+    description: null
+    fields: []
+    name: SYS_CFGDATA_OUT
+    size: 32
+  - access: read-write
+    address_offset: 168
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'Start: generates interrupt on write to this bit'
+      name: START
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Read/Write Access
+      name: RW_ACCESS
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Function Value
+      name: RFUNCVAL
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Device (value of 0/1/2 for supported clocks
+      name: DEVICE
+    name: SYS_CFGCTRL
+    size: 32
+  - access: read-write
+    address_offset: 172
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Error Flag
+      name: ERROR
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Complete Flag
+      name: COMPLETE
+    name: SYS_CFGSTAT
+    size: 32
+  - access: read-write
+    address_offset: 256
+    description: DLL Lock Register
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Error Flag
+      name: LOCKED_MASKED
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Complete Flag
+      name: LOCK_UNLOCK
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Complete Flag
+      name: LOCKED
+    name: DLL
+    size: 32
+  - access: read-only
+    address_offset: 4088
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: FPGA Build Number
+      name: FPGA_BUILD
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: V2M-MPS2 target Board Revision (A=0,B=1,C=2)
+      name: MPS2_REV
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Number of SCC configuration register
+      name: NUM_CFG_REG
+    name: AID
+    size: 32
+  - access: read-only
+    address_offset: 4092
+    description: null
+    fields:
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'Implementer ID: 0x41 = ARM'
+      name: IMPLEMENTER_ID
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Application note IP variant number
+      name: APP_NOTE_VAR
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'IP Architecture: 0x4 = AHB'
+      name: IP_ARCH
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: 'Primary Part Number: 383 = AN383'
+      name: PRI_NUM
+    - access: null
+      bit_offset: null
+      bit_width: null
+      description: Application note IP revision number
+      name: APP_REV
+    name: ID
+    size: 32
