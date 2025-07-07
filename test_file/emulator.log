@@ -1,0 +1,6 @@
+2025-03-12 19:09:41,451 - unicorn_emulator - INFO - Starting emulation for instance 1
+2025-03-12 19:09:41,451 - unicorn_emulator - ERROR - Instance 1 encountered an error: Invalid/unsupported architecture (UC_ERR_ARCH)
+2025-03-12 19:09:41,452 - unicorn_emulator - INFO - Starting emulation for instance 2
+2025-03-12 19:09:41,452 - unicorn_emulator - ERROR - Instance 2 encountered an error: Invalid/unsupported architecture (UC_ERR_ARCH)
+2025-03-12 19:09:41,452 - unicorn_emulator - INFO - Starting emulation for instance 3
+2025-03-12 19:09:41,452 - unicorn_emulator - ERROR - Instance 3 encountered an error: Invalid/unsupported architecture (UC_ERR_ARCH)
