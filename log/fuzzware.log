@@ -1,0 +1,4 @@
+2025-03-12 14:44:45,483 - fuzzware - INFO - Instance 0 is fuzzing with seed: b'AJ'
+2025-03-12 14:44:45,486 - fuzzware - ERROR - Instance 0 encountered an error: Invalid memory read (UC_ERR_READ_UNMAPPED)
+2025-03-12 14:44:45,486 - fuzzware - INFO - Instance 0 is fuzzing with seed: b'BK'
+2025-03-12 14:44:45,486 - fuzzware - ERROR - Instance 0 encountered an error: Invalid memory read (UC_ERR_READ_UNMAPPED)

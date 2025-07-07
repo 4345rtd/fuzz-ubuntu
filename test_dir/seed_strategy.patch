@@ -1,0 +1,43 @@
+diff --git a/src/afl-fuzz-queue.c b/src/afl-fuzz-queue.c
+--- a/src/afl-fuzz-queue.c
++++ b/src/afl-fuzz-queue.c
+@@ -123,6 +123,29 @@
+   return factor;
+ }
+
++/// 自定义得分计算函数
++static double calculate_custom_score(afl_state_t *afl, struct queue_entry *q) {
++  // 基础得分计算
++  double score = calculate_score(afl, q);
++  
++  // 时间因子：执行时间越短得分越高（毫秒单位）
++  double time_factor = 1000.0 / (q->exec_us + 1);
++  
++  // 路径深度因子：深度越大权重越高 
++  double depth_factor = log(q->depth + 200);
++  
++  // 新鲜度因子：最近20个周期内发现的种子
++  double freshness_factor = 1.0;
++  if (afl->queue_cycle - q->discovered < 20) {
++    freshness_factor = 2.0;
++  }
++  
++  // 组合权重
++  score *= time_factor * depth_factor * freshness_factor;
++  
++  return score;
++}
++
++
+ /// 创建别名抽样表
+ void create_alias_table(afl_state_t *afl) {
+   u32 num_entries = afl->queued_paths;
+@@ -147,7 +170,7 @@
+       while (tmp_q && tmp_q->disabled) tmp_q = tmp_q->next;
+       if (!tmp_q) break;
+
+-      double score = calculate_score(afl, tmp_q);
++      double score = calculate_custom_score(afl, tmp_q);
+       probabilities[i] = score * afl->queue_cycle / avg_exec_us;
+
+       if (probabilities[i] < 0.0001) probabilities[i] = 0.0001;

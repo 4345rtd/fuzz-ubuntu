@@ -1,0 +1,22 @@
+{
+  "metrics": [
+    {
+      "name": "\u53d1\u73b0\u8def\u5f84\u6570",
+      "baseline": 0.0,
+      "patched": 0.0,
+      "improvement": "0.00%"
+    },
+    {
+      "name": "\u72ec\u7279Crash\u6570",
+      "baseline": 0.0,
+      "patched": 0.0,
+      "improvement": "0.00%"
+    },
+    {
+      "name": "\u6267\u884c\u901f\u5ea6(\u6b21/\u79d2)",
+      "baseline": 0.0,
+      "patched": 0.0,
+      "improvement": "0.00%"
+    }
+  ]
+}
