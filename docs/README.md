@@ -1,14 +1,36 @@
-# Documentation Files
-The following files are meant to give you additional insight into how to use and deal with different stages of the Fuzzware workflow.
+1：fuzzware_harness emulator -h 可以查看到可以选择的参数
+	--default_yml DEFAULT_YML
+	--svd_path SVD_PATH
 
-| File | Description |
-| ---- | ----------- |
-| [target_configuration.md](target_configuration.md) | Tipps on creating an initial config and most importantly, refining an existing configuration to get the most out of your fuzzing cycles |
-| [coverage_analysis.md](coverage_analysis.md) | Given a `fuzzware-project` directory, figure out how the fuzzer is doing and where/why it gets stuck. |
-| [crash_analysis.md](crash_analysis.md) | Checking for crashes, bucketing them, and analyzing their root cause. |
-| [fuzzware_utils.md](fuzzware_utils.md) | An overview of some of the (other) Fuzzware tools and when they could be useful |
-| [manipulating_inputs.md](manipulating_inputs.md) | How to understand and manipulate inputs on your own, if you really need to |
-| [fuzzware-emulator/README_config.yml](https://github.com/fuzzware-fuzzer/fuzzware-emulator/blob/main/README_config.yml) | A pretty detailed (even if maybe not quite definitive) description of the config.yml syntax and supported options. |
-| [fuzzware-pipeline/README.md](https://github.com/fuzzware-fuzzer/fuzzware-pipeline/blob/main/README_pipeline_architecture.md) | An overview of the how the pipeline component is implented. |
+这两个参数的选择可以进行svd文件的处理个yml文件的选择
 
-As always, you don't necessarily need to treat the code itself as a black box. Feel free to also check out the emulator- as well as the pipeline source code itself.
+2：其他使用方法保留和原始的一样，没有做过多的修改
+
+3：可以参考下面原始使用方法
+工作流程：
+
+配置目标映像（fuzzware genconfig ）
+模糊目标： fuzzware pipeline --run-for 24:00:00
+收集覆盖统计信息： fuzzware genstats coverage
+在 fuzzware-project/stats中找到您的覆盖信息
+如果你想从Fuzzware中得到最好的（作为一个人在循环中），查看以下步骤：
+
+构建或获取目标固件映像
+配置基本内存范围：手动创建config或使用 fuzzware genconfig （最适合elf文件，但仍然对输出持保留意见并手动验证！）
+
+模糊目标： fuzzware pipeline
+检查覆盖率: fuzzware cov ,  fuzzware cov -o cov.txt 和 fuzzware cov <target_function> ,  fuzzware replay --covering <target_function>
+
+调整配置：fuzzware-emulator/README_config。又是Yml和fuzz。如果镜像需要重新构建，请转到步骤1。如果需要调整配置，请转到步骤3。
+一旦您合理地确定在当前设置中达到了有意义的功能，那么扩展内核： fuzzware pipeline -n 16 可能是有意义的。
+
+检查崩溃： fuzzware genstats crashcontexts
+重放和分析崩溃： fuzzware replay -M -t mainXXX/fuzzers/fuzzerY/crashes/idZZZ
+查看崩溃的位置：ls fuzzware-project/main*/fuzzers/fuzzer*/crashes/id* 或者可以使用fuzzware genstats crashcontexts
+
+fuzzware cov --outfile cov.txt 输出覆盖范围到指定文件
+
+fuzzware genstats coverage --valid-bb-file cov.txt 输出cov.txt统计输出
+
+虚拟机挂载共享目录的命令
+sudo mount -t fuse.vmhgfs-fuse .host:/ /mnt/hgfs -o allow_other
