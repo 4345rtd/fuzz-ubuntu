@@ -1,0 +1,9 @@
+diff --git a/emulator/afl-fuzz.c b/emulator/afl-fuzz.c
+index 1234567..89abcde 100644
+--- a/emulator/afl-fuzz.c
++++ b/emulator/afl-fuzz.c
+@@ -1234,6 +1234,7 @@ void setup_seed_pool() {
+   // 新增种子优先级排序逻辑
++  seed->priority = calculate_priority(seed);
+   qsort(seed_pool, num_seeds, sizeof(seed_t), compare_priority);
+ }
